@@ -31,6 +31,12 @@ const GORSELLER = {
   // structuramentis IQ Test
   iq_test:          "",
 
+  // AuraSocial — niyet odaklı sosyal medya
+  aurasocial:       "",
+
+  // İstanbul Koşusu — web + iOS oyun
+  istanbul_kosusu:  "",
+
   // Sahip avatarı / logo
   marka_logo:       "",
   sahip_avatar:     "",

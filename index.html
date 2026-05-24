@@ -153,6 +153,55 @@
   }
   .kart-alt .detay::after { content: " →"; }
 
+  /* Yapılan web siteleri */
+  section.siteler {
+    padding: 50px 24px;
+    background: var(--kagit);
+    border-top: 1px solid var(--cizgi);
+  }
+  .siteler .ic { max-width: 1100px; margin: 0 auto; }
+  .site-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .site-kart {
+    display: block; color: inherit; text-decoration: none;
+    background: #fff;
+    border: 1px solid var(--cizgi);
+    border-left: 3px solid var(--cizgi);
+    border-radius: 6px;
+    padding: 16px 18px;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .site-kart.canli {
+    border-left-color: var(--iyi);
+  }
+  .site-kart.bekliyor {
+    border-left-color: var(--vurgu); opacity: 0.85;
+  }
+  a.site-kart:hover {
+    transform: translateY(-1px);
+    border-color: var(--vurgu);
+  }
+  .site-ad {
+    font-size: 16px; font-weight: 700; color: var(--koyu);
+    margin-bottom: 2px;
+  }
+  .site-url {
+    font-family: ui-monospace, monospace;
+    font-size: 12px; color: var(--vurgu);
+    margin-bottom: 8px;
+  }
+  .site-not {
+    font-size: 13px; color: var(--orta); line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .site-durum {
+    font-size: 11px; font-weight: 600;
+    color: var(--iyi);
+  }
+  .site-kart.bekliyor .site-durum { color: var(--vurgu); }
+
   /* Gelir kanal matrisi */
   section.kanallar {
     padding: 50px 24px 60px;
@@ -213,6 +262,7 @@
     <nav>
       <a href="#cekirdek">Yıldız</a>
       <a href="#projeler">Ürünler</a>
+      <a href="#siteler">Siteler</a>
       <a href="#kanallar">Gelir</a>
       <a href="#iletisim">İletişim</a>
     </nav>
@@ -221,12 +271,14 @@
 
 <section class="hero">
   <div class="ic">
-    <h1>Türk yapımı, <span class="vurgu">deterministik matematik tabanlı</span> ürün portföyü. Sağlık, otomotiv, dil.</h1>
+    <h1>Türk yapımı, <span class="vurgu">deterministik matematik tabanlı</span> ürün portföyü. Sağlık · otomotiv · dil · sosyal · oyun · web.</h1>
     <p class="alt">
-      Tek bir matematik motorunun (Yıldız) üstüne kurulu dört üretim ürünü.
-      Klinik karar destek, motor diagnostik, araç ilan platformu, dil öğrenme.
-      AI/ML değil — klasik matematik mirasına dayanan, açıklanabilir,
-      marka-bağımsız çözümler. Almanya GmbH kurulum yol haritası hazır.
+      Tek bir matematik motorunun (Yıldız) üstüne kurulu çoklu üretim ürünü.
+      Klinik karar destek, motor diagnostik, araç ilan platformu, dil öğrenme,
+      niyet odaklı sosyal medya, mobil oyun, kurumsal web siteleri. AI/ML
+      değil — klasik matematik mirasına dayanan, açıklanabilir, marka-bağımsız
+      çözümler. Üç canlı kurumsal site, dört iOS uygulaması cihazda yayında.
+      Almanya GmbH ve Estonya OÜ kurulum yol haritaları hazır.
     </p>
     <div class="meta">
       <span><b>Yığın:</b> Swift / SwiftUI / SwiftData / Python / FastAPI / HTML</span>
@@ -340,6 +392,32 @@
           <div class="kart-alt">
             <span>iOS bundle: <span class="mono">com.akdag.motor372</span></span>
             <a href="proje_akdag_motor.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="aurasocial" alt="AuraSocial ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">SOSYAL MEDYA · iOS</div>
+          <h3>AuraSocial</h3>
+          <p>
+            Niyet odaklı sosyal medya — klasik like/follow/post yerine
+            <em>tanıklık / bağ / dalga</em> sözleşmesi. 17 frekanslı paylaşım,
+            Dunbar 7 çember, EQUALS tarzı eşleşme (radial uyum), real-time DM
+            (Supabase). Warm-black palet, ego-free ton, sayaç-baskısı yok.
+            KVKK + GDPR uyumlu, 0 üçüncü taraf analitik. Haziran başı reklam
+            başlangıcı planlı.
+          </p>
+          <span class="durum canli">● MVP canlı (iPhone 16e)</span>
+          <div class="stack">
+            <span>React Native 0.83</span><span>Expo SDK 55</span>
+            <span>TypeScript</span><span>Supabase realtime</span>
+            <span>Skia</span><span>Reanimated 3</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">org.name.AuraSocial</span></span>
+            <a href="proje_aurasocial.md" class="detay">Detay</a>
           </div>
         </div>
       </div>
@@ -504,6 +582,31 @@
       </div>
 
       <div class="kart">
+        <img data-gorsel="istanbul_kosusu" alt="İstanbul Koşusu ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">OYUN · WEB + iOS</div>
+          <h3>İstanbul Koşusu</h3>
+          <p>
+            5-lane endless runner. Three.js web çekirdek + iOS WKWebView
+            sarıcı. İstanbul'un 7 semti (Galata · Sultanahmet · Kadıköy ·
+            Beyoğlu · Boğaz · Üsküdar · Eminönü) deterministik sahne
+            üreticiyle: aynı (semt, zorluk, ofset) her zaman aynı dünyayı
+            verir, garantili geçit matematiksel olarak kanıtlı. Oyun üretme
+            yetkinlik testi + yeğen için.
+          </p>
+          <span class="durum yapim">○ Cihazda yüklü · TestFlight archive sırada</span>
+          <div class="stack">
+            <span>Three.js</span><span>ES module</span><span>WKWebView</span>
+            <span>SwiftUI</span><span>xcodegen</span><span>Python sahne üretici</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">com.akdag.istanbulkosusu</span></span>
+            <a href="proje_istanbul_kosusu.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
         <img data-gorsel="iq_test" alt="Structuramentis IQ Test">
         <div class="ic-icerik">
           <div class="domain">ZİHİN · iOS</div>
@@ -524,6 +627,49 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="siteler" id="siteler">
+  <div class="ic">
+    <div class="baslik2">Yapılan web siteleri</div>
+    <p style="font-size: 14px; color: var(--orta); margin-bottom: 18px; max-width: 720px;">
+      Kurumsal landing, ürün tanıtım ve hizmet siteleri. Cloudflare Pages
+      üzerinde, custom domain bağlı, SSL aktif. Tasarım: warm-bej zemin +
+      altın aksen + sade tipografi.
+    </p>
+    <div class="site-grid">
+      <a class="site-kart canli" href="https://akdagmedikal.org" target="_blank" rel="noopener">
+        <div class="site-ad">Akdağ Medikal</div>
+        <div class="site-url">akdagmedikal.org</div>
+        <div class="site-not">Klinik karar destek platformu — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <a class="site-kart canli" href="https://structuramentis.org" target="_blank" rel="noopener">
+        <div class="site-ad">Structuramentis</div>
+        <div class="site-url">structuramentis.org</div>
+        <div class="site-not">Bilişsel ölçüm ve zihinsel yapılandırma — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <a class="site-kart canli" href="https://onemessages.org" target="_blank" rel="noopener">
+        <div class="site-ad">OneMessages</div>
+        <div class="site-url">onemessages.org</div>
+        <div class="site-not">Tek mesaj odaklı iletişim aracı — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <div class="site-kart bekliyor">
+        <div class="site-ad">Arabalarımız.com</div>
+        <div class="site-url">arabalarimiz.com</div>
+        <div class="site-not">Sertifikalı araç ilan platformu — landing + KVKK hazır</div>
+        <div class="site-durum">○ Deploy bekliyor</div>
+      </div>
+      <div class="site-kart bekliyor">
+        <div class="site-ad">Beril Güzellik · Erciş</div>
+        <div class="site-url">—</div>
+        <div class="site-not">Güzellik salonu kurumsal site — lazer epilasyon · cilt bakımı · keratin</div>
+        <div class="site-durum">○ Deploy bekliyor</div>
+      </div>
     </div>
   </div>
 </section>

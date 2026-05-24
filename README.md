@@ -4,8 +4,8 @@ Yazılım mühendisi gözüyle bakılması için hazırlanmış tanıtım paketi
 
 ## Nasıl okunur
 
-1. **Önce `index.html`** — tarayıcıda aç, çekirdek motor + 4 ürün +
-   gelir kanal matrisi + 12 ay hedefi (5 dakika)
+1. **Önce `index.html`** — tarayıcıda aç, çekirdek motor + üretim ürünleri
+   + yapılan web siteleri + gelir kanal matrisi + 12 ay hedefi (5 dakika)
 2. **Sonra ilgini çeken parçayı derinleştir:**
    - [Yıldız](proje_yildiz.md) — deterministik matematik motoru, tüm
      ürünlerin altında ortak çekirdek
@@ -14,6 +14,10 @@ Yazılım mühendisi gözüyle bakılması için hazırlanmış tanıtım paketi
    - [Akdağ App (RN)](proje_akdag_app_rn.md) — Akdağ Medikal'in React
      Native cross-platform sürümü
    - [Akdağ Motor](proje_akdag_motor.md) — OBD-II motor sağlık iOS app
+   - [AuraSocial](proje_aurasocial.md) — niyet odaklı sosyal medya (tanıklık
+     / bağ / dalga), 6 sekme + EQUALS eşleşme + DM realtime, MVP canlı
+   - [İstanbul Koşusu](proje_istanbul_kosusu.md) — Three.js + iOS WKWebView
+     endless runner, 7 semt deterministik sahne üretimi
    - [Arabalarımız.com](proje_arabalarimiz.md) — sertifikalı araç ilan
      platformu
    - [LinguaNokta](proje_lingua_nokta.md) — İngilizce öğrenme app
@@ -26,6 +30,17 @@ Yazılım mühendisi gözüyle bakılması için hazırlanmış tanıtım paketi
    - [AKLUS](proje_aklus.md) — Linux taşıyıcılı işleme sistemi
    - [Structuramentis IQ Test](proje_iq_test.md) — zihinsel yapılandırma
      ve bilişsel ölçüm
+
+## Yapılan web siteleri (canlı)
+
+- **akdagmedikal.org** — Akdağ Medikal kurumsal site
+- **structuramentis.org** — Bilişsel ölçüm kurumsal site
+- **onemessages.org** — Tek mesaj odaklı iletişim aracı
+
+Cloudflare Pages üzerinde, custom domain + SSL aktif.
+
+Deploy bekleyenler: arabalarimiz.com landing, Beril Güzellik (Erciş)
+kurumsal site.
 
 ## Görseller (`gorseller.js`)
 
