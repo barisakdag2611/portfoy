@@ -14,8 +14,9 @@ Yazılım mühendisi gözüyle bakılması için hazırlanmış tanıtım paketi
    - [Akdağ App (RN)](proje_akdag_app_rn.md) — Akdağ Medikal'in React
      Native cross-platform sürümü
    - [Akdağ Motor](proje_akdag_motor.md) — OBD-II motor sağlık iOS app
-   - [AuraSocial](proje_aurasocial.md) — niyet odaklı sosyal medya (tanıklık
-     / bağ / dalga), 6 sekme + EQUALS eşleşme + DM realtime, MVP canlı
+   - [AuWave](proje_auwave.md) — niyet odaklı sosyal medya (tanıklık /
+     bağ / dalga), 6 sekme + EQUALS eşleşme + DM realtime + 13 Aura aleti +
+     6 mini oyun, MVP canlı (eski adı AuraSocial)
    - [İstanbul Koşusu](proje_istanbul_kosusu.md) — Three.js + iOS WKWebView
      endless runner, 7 semt deterministik sahne üretimi
    - [Arabalarımız.com](proje_arabalarimiz.md) — sertifikalı araç ilan
