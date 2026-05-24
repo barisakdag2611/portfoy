@@ -1,24 +1,21 @@
-# AuWave
+# AuraSocial
 
 **Niyet odaklı sosyal medya uygulaması.** Klasik like/follow/post yerine
 **tanıklık / bağ / dalga** sözleşmesi. 17 dalga frekansı, Dunbar 7 çember,
 EQUALS tarzı eşleşme, real-time özel mesajlaşma. Warm-black tema + sıcak
 terracotta aksent; ego-free ton, sayaç-baskısı yok.
 
-> Eski adı **Aura Social** idi; aynı isimli bir Türk pop grup çıkması üzerine
-> marka **AuWave** olarak yenilendi (Mayıs 2026).
-
 - **Stack:** React Native 0.83 + Expo SDK 55 (stable, canary yok) +
   React 19.2 + TypeScript + react-native-skia 2.4 + react-native-reanimated 3
 - **Backend:** Supabase (eu-central) — auth, postgres + RLS, realtime kanal
 - **Auth:** Apple Sign-In + e-posta + handle (`@kullanıcı`)
-- **Bundle:** `com.akdag.auwave`
+- **Bundle:** `com.akdag.aurasocial`
 - **Cihaz:** iPhone 16e (balophone), MVP canlı
 - **Reklam başlangıç:** Haziran başı 2026
 
 ## Niyet sözleşmesi — kendine özgü
 
-| Klasik | AuWave |
+| Klasik | AuraSocial |
 |---|---|
 | like | **tanıklık** (sessiz onay, sayaç yok) |
 | follow | **bağ** (karşılıklı, vektörlü) |
@@ -33,7 +30,7 @@ terracotta aksent; ego-free ton, sayaç-baskısı yok.
 **Alt sekmeler:** Alan · Çember · **Eşleş** (orta) · Arena · Aura · Profil
 
 **Aura aletleri** — 4 kategori altında chip filtreleme ile sunulur
-(LinguaNokta'nın "Bugün için" hero+chip paterni AuWave'e port edildi):
+(LinguaNokta'nın "Bugün için" hero+chip paterni AuraSocial'a port edildi):
 - **Sakin** — Nefes, Ruh, Söz, Sleep
 - **Tetik** — Odak, Habits, Mind
 - **Beden** — Saç, Dens, Scan
@@ -118,5 +115,3 @@ gösterir; tek dokunuş ile aleti açar.
   ama cihazda ya da backend'de Yıldız çalıştırılmıyor.
 - Tip: Strict TypeScript, expo router file-based, 0 tip hatası
 - Build: `npx expo run:ios --device <udid>` veya EAS build
-- URL scheme `aurasocial://` (Supabase auth callback uyumluluğu, marka
-  rename'den bağımsız iç teknik kimlik)

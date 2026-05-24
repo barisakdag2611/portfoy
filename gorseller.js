@@ -31,8 +31,8 @@ const GORSELLER = {
   // structuramentis IQ Test
   iq_test:          "",
 
-  // AuWave — niyet odaklı sosyal medya (eski adı AuraSocial)
-  auwave:           "",
+  // AuraSocial — niyet odaklı sosyal medya
+  aurasocial:       "",
 
   // İstanbul Koşusu — web + iOS oyun
   istanbul_kosusu:  "",
