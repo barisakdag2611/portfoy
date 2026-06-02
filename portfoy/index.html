@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammet Barış Akdağ — Portföy</title>
+<meta name="description" content="Akdağ ekosistemi: Yıldız motoru üstünde Akdağ Medikal, Akdağ Motor, Arabalarımız ve LinguaNokta. Türk yapımı deterministik matematik tabanlı ürünler.">
+<style>
+  :root {
+    --kagit: #fafaf6;
+    --koyu: #18181a;
+    --orta: #4a4a4d;
+    --sois: #8a8a85;
+    --cizgi: #e2e1d8;
+    --vurgu: #b88a2c;
+    --iyi: #2a8c3a;
+    --uyar: #c4533a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--kagit);
+    color: var(--koyu);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+  header.bar {
+    border-bottom: 1px solid var(--cizgi);
+    padding: 22px 0; background: var(--kagit);
+  }
+  header.bar .ic {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .marka { font-weight: 700; font-size: 17px; }
+  .marka .nokta { color: var(--vurgu); }
+  nav a { margin-left: 22px; color: var(--orta); font-size: 14px; }
+  nav a:hover { color: var(--koyu); }
+
+  section.hero { padding: 70px 24px 40px; }
+  .hero .ic { max-width: 880px; margin: 0 auto; }
+  .hero h1 {
+    font-size: 38px; line-height: 1.2; letter-spacing: -0.02em;
+    font-weight: 700; margin-bottom: 16px;
+  }
+  .hero h1 .vurgu { color: var(--vurgu); }
+  .hero .alt {
+    font-size: 17px; color: var(--orta); margin-bottom: 22px;
+    max-width: 720px;
+  }
+  .hero .meta {
+    font-size: 13px; color: var(--sois);
+    border-top: 1px solid var(--cizgi);
+    padding-top: 16px; margin-top: 24px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+  }
+  .hero .meta b { color: var(--koyu); font-weight: 600; }
+
+  /* Hedef bandı (sahibin keskin rakamları) */
+  section.hedef {
+    background: var(--koyu); color: var(--kagit);
+    padding: 36px 24px;
+  }
+  .hedef .ic {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px; text-align: center;
+  }
+  .hedef .kutu .deger {
+    font-size: 28px; font-weight: 700; color: var(--vurgu);
+    margin-bottom: 4px; letter-spacing: -0.01em;
+  }
+  .hedef .kutu .ad {
+    font-size: 12px; color: var(--sois);
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+
+  section.projeler {
+    padding: 60px 24px 60px;
+    background: var(--kagit);
+  }
+  .projeler .ic { max-width: 1100px; margin: 0 auto; }
+  .baslik2 {
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--orta);
+    margin-bottom: 18px;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 18px;
+  }
+  .kart {
+    background: #fff;
+    border: 1px solid var(--cizgi);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .kart .gorsel-yer, .kart img {
+    width: 100%; height: 180px; object-fit: cover;
+    background: linear-gradient(135deg, #e8e6db 0%, #d4d1c0 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sois); font-size: 12px;
+  }
+  .kart .ic-icerik { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .kart h3 {
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .kart .domain {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--vurgu);
+  }
+  .kart p {
+    font-size: 14px; color: var(--orta);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .durum {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 4px;
+    align-self: flex-start;
+  }
+  .durum.canli { background: rgba(42, 140, 58, 0.1); color: var(--iyi); }
+  .durum.yapim { background: rgba(196, 83, 58, 0.08); color: var(--uyar); }
+  .durum.tasarim { background: rgba(184, 138, 44, 0.1); color: var(--vurgu); }
+  .durum.cekirdek { background: rgba(24, 24, 26, 0.08); color: var(--koyu); }
+  .stack {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    border-top: 1px dotted var(--cizgi);
+    padding-top: 12px;
+  }
+  .stack span {
+    font-family: ui-monospace, monospace;
+    font-size: 11px; color: var(--orta);
+    background: var(--kagit);
+    padding: 3px 8px; border-radius: 3px;
+  }
+  .kart-alt {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--cizgi);
+    padding-top: 12px;
+    font-size: 13px;
+  }
+  .kart-alt .detay {
+    color: var(--vurgu); font-weight: 600;
+  }
+  .kart-alt .detay::after { content: " →"; }
+
+  /* Yapılan web siteleri */
+  section.siteler {
+    padding: 50px 24px;
+    background: var(--kagit);
+    border-top: 1px solid var(--cizgi);
+  }
+  .siteler .ic { max-width: 1100px; margin: 0 auto; }
+  .site-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .site-kart {
+    display: block; color: inherit; text-decoration: none;
+    background: #fff;
+    border: 1px solid var(--cizgi);
+    border-left: 3px solid var(--cizgi);
+    border-radius: 6px;
+    padding: 16px 18px;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .site-kart.canli {
+    border-left-color: var(--iyi);
+  }
+  .site-kart.bekliyor {
+    border-left-color: var(--vurgu); opacity: 0.85;
+  }
+  a.site-kart:hover {
+    transform: translateY(-1px);
+    border-color: var(--vurgu);
+  }
+  .site-ad {
+    font-size: 16px; font-weight: 700; color: var(--koyu);
+    margin-bottom: 2px;
+  }
+  .site-url {
+    font-family: ui-monospace, monospace;
+    font-size: 12px; color: var(--vurgu);
+    margin-bottom: 8px;
+  }
+  .site-not {
+    font-size: 13px; color: var(--orta); line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .site-durum {
+    font-size: 11px; font-weight: 600;
+    color: var(--iyi);
+  }
+  .site-kart.bekliyor .site-durum { color: var(--vurgu); }
+
+  /* Gelir kanal matrisi */
+  section.kanallar {
+    padding: 50px 24px 60px;
+    background: #fff;
+    border-top: 1px solid var(--cizgi);
+    border-bottom: 1px solid var(--cizgi);
+  }
+  .kanallar .ic { max-width: 1000px; margin: 0 auto; }
+  .kanal-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px; margin-top: 20px;
+  }
+  .kanal {
+    background: var(--kagit);
+    border: 1px solid var(--cizgi);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .kanal .harf {
+    font-family: ui-monospace, monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--vurgu); margin-bottom: 4px;
+    letter-spacing: 0.1em;
+  }
+  .kanal .ad { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .kanal .alt { font-size: 12px; color: var(--orta); }
+
+  footer {
+    background: var(--kagit);
+    border-top: 1px solid var(--cizgi);
+    padding: 40px 24px 30px;
+  }
+  footer .ic {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer .iletisim {
+    font-size: 14px; color: var(--orta);
+  }
+  footer .iletisim b { color: var(--koyu); font-weight: 600; }
+  footer .alt-not {
+    font-size: 11px; color: var(--sois);
+  }
+
+  @media (max-width: 760px) {
+    .hero h1 { font-size: 28px; }
+    nav a { margin-left: 14px; font-size: 13px; }
+    .hedef .kutu .deger { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="ic">
+    <div class="marka">Muhammet Barış Akdağ<span class="nokta">.</span></div>
+    <nav>
+      <a href="#cekirdek">Yıldız</a>
+      <a href="#projeler">Ürünler</a>
+      <a href="#siteler">Siteler</a>
+      <a href="#kanallar">Gelir</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="ic">
+    <h1>Türk yapımı, <span class="vurgu">deterministik matematik tabanlı</span> ürün portföyü. Sağlık · otomotiv · dil · sosyal · oyun · web.</h1>
+    <p class="alt">
+      Tek bir matematik motorunun (Yıldız) üstüne kurulu çoklu üretim ürünü.
+      Klinik karar destek, motor diagnostik, araç ilan platformu, dil öğrenme,
+      niyet odaklı sosyal medya, mobil oyun, kurumsal web siteleri. AI/ML
+      değil — klasik matematik mirasına dayanan, açıklanabilir, marka-bağımsız
+      çözümler. Üç canlı kurumsal site, dört iOS uygulaması cihazda yayında.
+      Almanya GmbH ve Estonya OÜ kurulum yol haritaları hazır.
+    </p>
+    <div class="meta">
+      <span><b>Yığın:</b> Swift / SwiftUI / SwiftData / Python / FastAPI / HTML</span>
+      <span><b>Cihaz hattı:</b> iPhone 16e canlı yayın</span>
+      <span><b>Kayıt zinciri:</b> 39 denetim izli ledger</span>
+      <span><b>Durum:</b> freelance / ortaklık / lisans görüşmeye açık</span>
+    </div>
+  </div>
+</section>
+
+<section class="hedef">
+  <div class="ic">
+    <div class="kutu">
+      <div class="deger">25</div>
+      <div class="ad">Hedef ödeyen klinik</div>
+    </div>
+    <div class="kutu">
+      <div class="deger">₺15M</div>
+      <div class="ad">12 ay ARR</div>
+    </div>
+    <div class="kutu">
+      <div class="deger">38</div>
+      <div class="ad">Gelir kanalı / 11 kategori</div>
+    </div>
+    <div class="kutu">
+      <div class="deger">₺25-40M</div>
+      <div class="ad">Toplam portföy hedefi</div>
+    </div>
+  </div>
+</section>
+
+<section class="projeler" id="cekirdek">
+  <div class="ic">
+    <div class="baslik2">Çekirdek motor</div>
+    <div class="grid" style="grid-template-columns: 1fr; max-width: 700px; margin: 0 auto 40px;">
+      <div class="kart">
+        <img data-gorsel="yildiz" alt="Yıldız motoru">
+        <div class="ic-icerik">
+          <div class="domain">SUBSTRAT · MATEMATIK MOTORU</div>
+          <h3>Yıldız</h3>
+          <p>
+            Akdağ ekosistemindeki tüm üretim ürünlerinin altında ortak
+            deterministik matematik çekirdeği. Klasik matematik mirasından
+            (Hilbert · Gödel · Turing · soliton dalga geleneği) — yapay öğrenme
+            değil. Aynı girdi → aynı çıktı, halüsinasyon yok, denetlenebilir.
+            5 kuvvet bağlanım yapısı; sağlık, otomotiv, dil ve eğitim alanlarına
+            izomorfik aktarım sağlar.
+          </p>
+          <span class="durum cekirdek">● Üretim çekirdeği · 4 ürünün altında canlı</span>
+          <div class="stack">
+            <span>Python</span><span>Klasik matematik</span>
+            <span>Soliton dalga</span><span>Bayesian</span>
+            <span>Çekirdek modüller (NDA)</span>
+          </div>
+          <div class="kart-alt">
+            <span>Algoritma çekirdeği NDA + ön-görüşme sonrası teknik komiteye</span>
+            <a href="proje_yildiz.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projeler" id="projeler">
+  <div class="ic">
+    <div class="baslik2">Üretim ürünleri</div>
+    <div class="grid">
+
+      <div class="kart">
+        <img data-gorsel="akdag_medikal" alt="Akdağ Medikal ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">SAĞLIK · iOS</div>
+          <h3>Akdağ Medikal</h3>
+          <p>
+            Saç ekimi merkezli, 6 tıp branşına izomorfik genişleyen klinik karar
+            destek platformu. 26 teknoloji modülü tek monolit iOS uygulamasında.
+            4 katman çıktı: Dijital İkiz · Atlas · Delta · Projeksiyon. 39 denetim
+            izli kayıt zinciri sağlam. Almanya GmbH kurulum yol haritası ve
+            Android aktarım planı hazır.
+          </p>
+          <span class="durum canli">● Canlı (iPhone 16e)</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>SwiftUI</span><span>ARKit</span>
+            <span>FastAPI</span><span>Python</span><span>6 branş atlas</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">com.akdag.app</span></span>
+            <a href="proje_akdag_medikal.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="akdag_motor" alt="Akdağ Motor ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">OTOMOTİV · iOS</div>
+          <h3>Akdağ Motor</h3>
+          <p>
+            OBD-II adaptörüyle motor durumundan + oksijen sensöründen arızanın
+            anlamını çıkaran iOS uygulaması. 7 boyutlu sağlık vektörü, sistematik
+            tarama (DTC + 15 sn pencere), VIN + WMI decode, SwiftData zaman
+            çizelgesi, BLE/USB ELM327. Yorum değil ölçüm — aynı veri aynı raporu
+            verir.
+          </p>
+          <span class="durum canli">● Canlı (iPhone 16e)</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>SwiftUI</span><span>SwiftData</span>
+            <span>CoreBluetooth</span><span>WebSerial</span><span>OBD-II</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">com.akdag.motor372</span></span>
+            <a href="proje_akdag_motor.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="aurasocial" alt="AuraSocial ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">SOSYAL MEDYA · iOS</div>
+          <h3>AuraSocial</h3>
+          <p>
+            Niyet odaklı sosyal medya — klasik like/follow/post yerine
+            <em>tanıklık / bağ / dalga</em> sözleşmesi. 17 frekanslı paylaşım,
+            Dunbar 7 çember, EQUALS tarzı eşleşme (radial uyum), real-time DM
+            (Supabase). Warm-black palet + terracotta sıcak aksent; ego-free
+            ton, sayaç-baskısı yok. 13 Aura aleti chip filtreyle 4 kategoride.
+            Sleep ambient ses + Scan kamera+not aktif. 6 mini oyun (İstanbul
+            Koşusu, Galata Atlama, Lokum Eşle…). KVKK + GDPR uyumlu, 0 üçüncü
+            taraf analitik. Haziran başı reklam başlangıcı planlı.
+          </p>
+          <span class="durum canli">● MVP canlı (iPhone 16e) · 0 tip hatası</span>
+          <div class="stack">
+            <span>React Native 0.83</span><span>Expo SDK 55</span>
+            <span>TypeScript</span><span>Supabase realtime</span>
+            <span>Skia</span><span>Reanimated 3</span><span>expo-audio</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">com.akdag.aurasocial</span></span>
+            <a href="proje_aurasocial.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="arabalarimiz" alt="Arabalarımız.com ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">PLATFORM · WEB</div>
+          <h3>Arabalarımız.com</h3>
+          <p>
+            Akdağ Motor sertifikası tabanlı araç ilan platformu — satıcı
+            motorunu canlı tarar, raporu ilana ekler, "güvenli rozet" alır.
+            Alıcı motor sağlığını rakamlarla görerek karar verir; sertifikası
+            olmayan araç piyasada görünmez. İki yönlü güven kapısı.
+          </p>
+          <span class="durum tasarim">○ Static landing hazır · backend bekliyor</span>
+          <div class="stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>KVKK iç sayfa</span><span>Cloudflare Pages (planlı)</span>
+          </div>
+          <div class="kart-alt">
+            <span>Domain: <span class="mono">arabalarimiz.com</span></span>
+            <a href="proje_arabalarimiz.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="lingua_nokta" alt="LinguaNokta ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">EĞİTİM · iOS + SUNUCU</div>
+          <h3>LinguaNokta</h3>
+          <p>
+            İngilizce öğrenme uygulaması. WordNet + cmudict tabanlı gerçek dil
+            motoru (kural tabanlı, AI değil) ve iOS arayüzü. Sektörün üst-tabanlı
+            tıkanışına karşı 6 modlu (idea, form, gözlemci, doğrulama, üretim,
+            geri besleme) çekirdek mimari.
+          </p>
+          <span class="durum canli">● iOS xcodegen build OK · sunucu ayakta</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>SwiftUI</span><span>Python</span>
+            <span>FastAPI</span><span>WordNet</span><span>cmudict</span>
+          </div>
+          <div class="kart-alt">
+            <span>72 teknoloji</span>
+            <a href="proje_lingua_nokta.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="akdag_app_rn" alt="Akdağ App React Native">
+        <div class="ic-icerik">
+          <div class="domain">SAĞLIK · CROSS-PLATFORM</div>
+          <h3>Akdağ App (RN)</h3>
+          <p>
+            Akdağ Medikal'in React Native + Expo tabanlı cross-platform sürümü.
+            iOS + Android + Web tek kod tabanından. Klinisyen ve hasta tarafına
+            tarayıcıdan erişim için.
+          </p>
+          <span class="durum yapim">○ Expo geliştirme</span>
+          <div class="stack">
+            <span>React Native</span><span>Expo</span><span>TypeScript</span>
+            <span>EAS Build</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS + Android + Web tek tabanda</span>
+            <a href="proje_akdag_app_rn.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="aura_suite" alt="Aura Suite">
+        <div class="ic-icerik">
+          <div class="domain">KİŞİSEL · iOS PAKETİ</div>
+          <h3>Aura Suite</h3>
+          <p>
+            8 mini iOS uygulaması: AuraBreath (nefes), AuraCalc (özel hesap),
+            AuraFocus (odak), AuraHabits (alışkanlık), AuraMind (zihin),
+            AuraMood (ruh hali), AuraNotes (not), AuraQr. Ortak çekirdek
+            (`_core`) üstünde paketlenmiş kişisel verim ve zihin disiplini
+            uygulamaları.
+          </p>
+          <span class="durum canli">● 8 mini app · ortak çekirdek</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>SwiftUI</span><span>iOS</span>
+            <span>Ortak _core</span>
+          </div>
+          <div class="kart-alt">
+            <span>App Store hedefli paket</span>
+            <a href="proje_aura_suite.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="alan_evren" alt="AlanEvren">
+        <div class="ic-icerik">
+          <div class="domain">TEORİ + UYGULAMA · iOS</div>
+          <h3>AlanEvren · 1000 Fert</h3>
+          <p>
+            Çoklu-fert alan dinamiği teorisinin App Store hedefli inşası. Xcode
+            projesi + Swift Package + App + AppStore yayın hattı + fert
+            kataloğu. 1000 fert kart-tabanlı görselleştirme ve etkileşim;
+            "ince ilmek" eylem akışı.
+          </p>
+          <span class="durum yapim">○ İnşa hattı kurulu · App Store yayın bekliyor</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>Xcode</span><span>Swift Package</span>
+            <span>App Store Connect</span>
+          </div>
+          <div class="kart-alt">
+            <span>1000 fert kataloğu</span>
+            <a href="proje_alan_evren.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="mempalace" alt="MemPalace">
+        <div class="ic-icerik">
+          <div class="domain">AI BELLEK · OPEN-SOURCE</div>
+          <h3>MemPalace</h3>
+          <p>
+            AI sistemleri için bellek altyapısı. Antik hatip "bellek sarayı"
+            tekniğinden esinlenen yapı: konuşmaları kanat (kişi/proje), salon
+            (bellek tipi), oda (özel fikir) hiyerarşisinde saklayan,
+            navigasyona açık çerçeve. Açık kaynak.
+          </p>
+          <span class="durum canli">● Open-source · benchmark zirvesi</span>
+          <div class="stack">
+            <span>Python</span><span>JSON şema</span><span>Hooks</span>
+            <span>Integrations</span>
+          </div>
+          <div class="kart-alt">
+            <span>License: MIT</span>
+            <a href="proje_mempalace.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="aklus" alt="AKLUS">
+        <div class="ic-icerik">
+          <div class="domain">SİSTEM · LİNUX</div>
+          <h3>AKLUS</h3>
+          <p>
+            Linux taşıyıcı katmanı üstünde yepyeni işleme sistemi (kopya/fork
+            değil). Yıldız motorunun yan-kardeş işletim katmanı; sistem-seviyesi
+            işleme operasyonları için.
+          </p>
+          <span class="durum yapim">○ Yapım hattı</span>
+          <div class="stack">
+            <span>Python</span><span>Linux</span><span>System scripts</span>
+          </div>
+          <div class="kart-alt">
+            <span>Yıldız yan-kardeş</span>
+            <a href="proje_aklus.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="istanbul_kosusu" alt="İstanbul Koşusu ekran görüntüsü">
+        <div class="ic-icerik">
+          <div class="domain">OYUN · WEB + iOS</div>
+          <h3>İstanbul Koşusu</h3>
+          <p>
+            5-lane endless runner. Three.js web çekirdek + iOS WKWebView
+            sarıcı. İstanbul'un 7 semti (Galata · Sultanahmet · Kadıköy ·
+            Beyoğlu · Boğaz · Üsküdar · Eminönü) deterministik sahne
+            üreticiyle: aynı (semt, zorluk, ofset) her zaman aynı dünyayı
+            verir, garantili geçit matematiksel olarak kanıtlı. Oyun üretme
+            yetkinlik testi + yeğen için.
+          </p>
+          <span class="durum yapim">○ Cihazda yüklü · TestFlight archive sırada</span>
+          <div class="stack">
+            <span>Three.js</span><span>ES module</span><span>WKWebView</span>
+            <span>SwiftUI</span><span>xcodegen</span><span>Python sahne üretici</span>
+          </div>
+          <div class="kart-alt">
+            <span>iOS bundle: <span class="mono">com.akdag.istanbulkosusu</span></span>
+            <a href="proje_istanbul_kosusu.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kart">
+        <img data-gorsel="iq_test" alt="Structuramentis IQ Test">
+        <div class="ic-icerik">
+          <div class="domain">ZİHİN · iOS</div>
+          <h3>Structuramentis · IQ Test</h3>
+          <p>
+            Zihinsel yapılandırma ve IQ ölçüm uygulaması. Çoklu-modüllü zihin
+            yapısı çerçevesinin (Structura) ölçüm ucu — bilişsel kapasite ve
+            örüntü tanıma görevleri.
+          </p>
+          <span class="durum yapim">○ Geliştirme</span>
+          <div class="stack">
+            <span>Swift 5.9</span><span>SwiftUI</span><span>iOS</span>
+          </div>
+          <div class="kart-alt">
+            <span>Structura ölçüm ucu</span>
+            <a href="proje_iq_test.md" class="detay">Detay</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="siteler" id="siteler">
+  <div class="ic">
+    <div class="baslik2">Yapılan web siteleri</div>
+    <p style="font-size: 14px; color: var(--orta); margin-bottom: 18px; max-width: 720px;">
+      Kurumsal landing, ürün tanıtım ve hizmet siteleri. Cloudflare Pages
+      üzerinde, custom domain bağlı, SSL aktif. Tasarım: warm-bej zemin +
+      altın aksen + sade tipografi.
+    </p>
+    <div class="site-grid">
+      <a class="site-kart canli" href="https://akdagmedikal.org" target="_blank" rel="noopener">
+        <div class="site-ad">Akdağ Medikal</div>
+        <div class="site-url">akdagmedikal.org</div>
+        <div class="site-not">Klinik karar destek platformu — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <a class="site-kart canli" href="https://structuramentis.org" target="_blank" rel="noopener">
+        <div class="site-ad">Structuramentis</div>
+        <div class="site-url">structuramentis.org</div>
+        <div class="site-not">Bilişsel ölçüm ve zihinsel yapılandırma — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <a class="site-kart canli" href="https://onemessages.org" target="_blank" rel="noopener">
+        <div class="site-ad">OneMessages</div>
+        <div class="site-url">onemessages.org</div>
+        <div class="site-not">Tek mesaj odaklı iletişim aracı — kurumsal site</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+      <div class="site-kart bekliyor">
+        <div class="site-ad">Arabalarımız.com</div>
+        <div class="site-url">arabalarimiz.com</div>
+        <div class="site-not">Sertifikalı araç ilan platformu — landing + KVKK hazır</div>
+        <div class="site-durum">○ Deploy bekliyor</div>
+      </div>
+      <a class="site-kart canli" href="https://ercisguzellik.com" target="_blank" rel="noopener">
+        <div class="site-ad">Beril Güzellik · Erciş</div>
+        <div class="site-url">ercisguzellik.com</div>
+        <div class="site-not">Güzellik salonu kurumsal site — lazer epilasyon · cilt bakımı · keratin</div>
+        <div class="site-durum">● Canlı</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="kanallar" id="kanallar">
+  <div class="ic">
+    <div class="baslik2">Gelir Kanalları · 38 kanal / 11 kategori</div>
+    <p style="font-size: 14px; color: var(--orta); margin-bottom: 4px; max-width: 720px;">
+      Tek üründen değil, çoklu kanaldan gelir. Her kategori bağımsız işler;
+      birinin durması diğerini durdurmaz.
+    </p>
+    <div class="kanal-grid">
+      <div class="kanal"><div class="harf">A</div><div class="ad">Klinik aboneliği</div><div class="alt">25-100 bin ₺/ay/klinik</div></div>
+      <div class="kanal"><div class="harf">B</div><div class="ad">Sektörel lisans</div><div class="alt">5-25 milyon ₺ tek seferlik</div></div>
+      <div class="kanal"><div class="harf">C</div><div class="ad">App Store consumer</div><div class="alt">Akdağ Motor + LinguaNokta</div></div>
+      <div class="kanal"><div class="harf">D</div><div class="ad">Hizmet projeleri</div><div class="alt">200-500 bin ₺ özel iş</div></div>
+      <div class="kanal"><div class="harf">E</div><div class="ad">Eğitim / sertifikasyon</div><div class="alt">Klinisyen + atölye + okul</div></div>
+      <div class="kanal"><div class="harf">F</div><div class="ad">Akademik veri</div><div class="alt">Anonim toplulaştırılmış</div></div>
+      <div class="kanal"><div class="harf">G</div><div class="ad">Coğrafi açılım</div><div class="alt">DE / UK / MENA / Balkan</div></div>
+      <div class="kanal"><div class="harf">H</div><div class="ad">Bitişik pazar</div><div class="alt">Veteriner / spor / güzellik</div></div>
+      <div class="kanal"><div class="harf">I</div><div class="ad">Hibe + yatırım</div><div class="alt">KOSGEB / TÜBİTAK / EU</div></div>
+      <div class="kanal"><div class="harf">J</div><div class="ad">Patent + trademark</div><div class="alt">Uzun vadeli pasif</div></div>
+      <div class="kanal"><div class="harf">K</div><div class="ad">Marketplace komisyon</div><div class="alt">Arabalarımız + ortaklık</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="iletisim">
+  <div class="ic">
+    <div class="iletisim">
+      <b>Muhammet Barış Akdağ</b> · Anadolu<br>
+      <span class="alt-not">Freelance / ortaklık / lisans görüşmeleri için iletişim sahibin elinde.</span>
+    </div>
+    <div class="alt-not">
+      © 2026 · Bu paket bir sunum dosyasıdır. Algoritma çekirdeği NDA altında paylaşılır.
+    </div>
+  </div>
+</footer>
+
+<script src="gorseller.js"></script>
+</body>
+</html>

@@ -37,11 +37,11 @@ Yazılım mühendisi gözüyle bakılması için hazırlanmış tanıtım paketi
 - **akdagmedikal.org** — Akdağ Medikal kurumsal site
 - **structuramentis.org** — Bilişsel ölçüm kurumsal site
 - **onemessages.org** — Tek mesaj odaklı iletişim aracı
+- **ercisguzellik.com** — Beril Güzellik Salonu (Erciş) kurumsal site
 
 Cloudflare Pages üzerinde, custom domain + SSL aktif.
 
-Deploy bekleyenler: arabalarimiz.com landing, Beril Güzellik (Erciş)
-kurumsal site.
+Deploy bekleyenler: arabalarimiz.com landing.
 
 ## Görseller (`gorseller.js`)
 
